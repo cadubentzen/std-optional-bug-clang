@@ -1,7 +1,6 @@
 #include <string.h>
 
-extern "C" int incrementIntIfStringsEqual(const char *c1, const char *c2,
-                                          int *v) {
+int incrementIntIfStringsEqual(const char *c1, const char *c2, int *v) {
   auto result = !strcmp(c1, c2);
   if (result)
     *v += 1;

@@ -2,7 +2,7 @@
 #include <iostream>
 #include <optional>
 
-extern "C" int incrementIntIfStringsEqual(const char *, const char *, int *);
+int incrementIntIfStringsEqual(const char *, const char *, int *);
 
 #define UNLIKELY(x) __builtin_expect(!!(x), 0)
 
