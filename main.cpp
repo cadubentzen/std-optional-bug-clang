@@ -1,3 +1,5 @@
+// Defining `incrementIntIfStringsEqual` in the same compilation unit fixes the
+// bug, it needs to be in a separate one.
 #include "util.h"
 #include <iostream>
 #include <optional>
