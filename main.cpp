@@ -17,6 +17,7 @@ int main(int argc, char **argv) {
   auto opt = shouldReturnEmptyOptional();
   // The issue is gone if `*opt > 0` is removed.
   if (opt && *opt > 0) {
+    // If opt is not dereferenced inside this scope, the bug is also gone
     std::cout << "SHOULD NOT BE PRINTED: *opt = " << *opt << std::endl;
   }
 }
