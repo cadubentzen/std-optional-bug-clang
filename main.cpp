@@ -1,8 +1,6 @@
-
+#include "util.h"
 #include <iostream>
 #include <optional>
-
-int incrementIntIfStringsEqual(const char *, const char *, int *);
 
 #define UNLIKELY(x) __builtin_expect(!!(x), 0)
 
