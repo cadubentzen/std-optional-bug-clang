@@ -2,6 +2,8 @@
 // bug, it needs to be in a separate one.
 int incrementIntIfTrue(int &, bool);
 
+// Very stripped-down version of std::optional from libstdc++.
+// The minimum to reproduce the issue.
 class OptInt {
 public:
   // Fixes the issue by replacing the empty ctor with:
