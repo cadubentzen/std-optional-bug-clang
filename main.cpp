@@ -1,6 +1,7 @@
 // Defining `incrementIntIfStringsEqual` in the same compilation unit fixes the
 // bug, it needs to be in a separate one.
 int incrementIntIfTrue(int &, bool);
+void useInt(int a);
 
 // Very stripped-down version of std::optional from libstdc++.
 // The minimum to reproduce the issue.
@@ -32,6 +33,6 @@ int main(int argc, char **argv) {
   // The issue is gone if `*opt > 0` is removed.
   if (opt && *opt > 0) {
     // If opt is not dereferenced inside this scope, the bug is also gone
-    return *opt;
+    useInt(*opt);
   }
 }

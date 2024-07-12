@@ -8,6 +8,6 @@ The code has been reduced to a minimum, now with no dependencies to libstdc++ an
 
 It has been introduced by [this commit](https://github.com/llvm/llvm-project/commit/060de415af335fdd82910f409e2be3b8457eaa43) in LLVM.
 
-Example in Compiler Explorer: https://godbolt.org/z/zvsvqvMnz
+Example in Compiler Explorer: https://godbolt.org/z/qxKsY51Tc
 
 
