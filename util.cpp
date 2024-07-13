@@ -1,9 +1,4 @@
-#include <iostream>
+#include <assert.h>
 
-int incrementIntIfTrue(int &v, bool c) {
-  if (c)
-    v += 1;
-  return c;
-}
-
-void useInt(int a) { std::cout << a << std::endl; }
+int takeIntRefReturn0(int &) { return 0; }
+void assertNotReached(int) { assert(false); }

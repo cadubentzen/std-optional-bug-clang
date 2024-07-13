@@ -1,7 +1,7 @@
 // Defining `incrementIntIfStringsEqual` in the same compilation unit fixes the
 // bug, it needs to be in a separate one.
-int incrementIntIfTrue(int &, bool);
-void useInt(int a);
+int takeIntRefReturn0(int &);
+void assertNotReached(int a);
 
 // Very stripped-down version of std::optional from libstdc++.
 // The minimum to reproduce the issue.
@@ -21,18 +21,18 @@ private:
 };
 
 // Also fixes the issue by adding __attribute__((noinline)
-static OptInt shouldReturnEmptyOptional() {
+inline OptInt shouldReturnEmptyOptional() {
   int v = 1;
-  if (incrementIntIfTrue(v, false))
+  if (takeIntRefReturn0(v))
     return v;
   return {};
 }
 
-int main(int argc, char **argv) {
+int main() {
   auto opt = shouldReturnEmptyOptional();
   // The issue is gone if `*opt > 0` is removed.
   if (opt && *opt > 0) {
     // If opt is not dereferenced inside this scope, the bug is also gone
-    useInt(*opt);
+    assertNotReached(*opt);
   }
 }
