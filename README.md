@@ -10,4 +10,6 @@ It has been introduced by [this commit](https://github.com/llvm/llvm-project/com
 
 Example in Compiler Explorer: https://godbolt.org/z/qxKsY51Tc
 
+UPDATE: the bug was fixed in https://github.com/llvm/llvm-project/pull/98898
+
 
